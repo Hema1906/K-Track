@@ -1,0 +1,212 @@
+@import url("dashboard.css");
+
+/* ================================
+   ANALYTICS PAGE
+================================ */
+
+.page-title {
+    margin: 0;
+    font-size: 18px;
+    flex: 1;
+}
+
+/* ================================
+   KPI CARDS
+================================ */
+
+.kpis {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.kpi {
+    width: 100%;
+    min-width: 0;
+    min-height: 150px;
+    padding: 22px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.kpi p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.kpi h2 {
+    margin: 12px 0 7px;
+    font-size: 38px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.kpi .muted {
+    margin: 0;
+    font-size: 14px;
+    color: var(--ink-2);
+}
+
+/* ================================
+   CHARTS
+================================ */
+
+canvas {
+    width: 100%;
+    display: block;
+}
+
+#chartMonthly {
+    width: 100%;
+    display: block;
+}
+
+/* ================================
+   GRID
+================================ */
+
+.grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+    gap: 18px;
+    width: 100%;
+}
+
+.grid .card {
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* ================================
+   MONTHLY SUMMARY
+================================ */
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.summary div {
+    min-width: 0;
+    padding: 18px;
+    border-radius: 16px;
+    background: rgba(255,255,255,.05);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.summary span {
+    display: block;
+    color: var(--ink-2);
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.summary b {
+    font-size: 26px;
+    color: var(--ink);
+}
+
+/* ================================
+   INSIGHTS
+================================ */
+
+.insights {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.insights li {
+    padding: 14px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid var(--stroke);
+    font-size: 13px;
+    color: var(--ink-2);
+}
+
+.insights li b {
+    display: block;
+    color: var(--ink);
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+/* ================================
+   PROGRESS BARS
+================================ */
+
+#pbPunct,
+#pbCons,
+#pbOff,
+#pbScore {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(
+        90deg,
+        var(--brand),
+        var(--brand-2)
+    );
+    border-radius: 999px;
+    transition: width 1.2s ease;
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1100px) {
+
+    .kpis {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .insights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .kpis {
+        grid-template-columns: 1fr;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary {
+        grid-template-columns: 1fr;
+    }
+
+    .insights {
+        grid-template-columns: 1fr;
+    }
+
+    .kpi {
+        min-height: 130px;
+    }
+}
