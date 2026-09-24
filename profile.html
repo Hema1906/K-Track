@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Profile · Attend-It</title>
+<link rel="stylesheet" href="css/profile.css"/>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div id="loader" class="loader hidden"><div class="loader-ring"></div></div>
+  <div id="toast" class="toast"></div>
+  <div class="app">
+    <aside class="sidebar glass" id="sidebar">
+      <div class="brand"><img src="pic/complogo.jpeg" class="logo-sm" alt="Attend-It Logo"><span>K-Track</span></div>
+      <nav class="nav">
+        <a href="dashboard.html" class="nav-item">Dashboard</a>
+        <a href="attendance.html" class="nav-item">Attendance</a>
+        <a href="analytics.html" class="nav-item">Analytics</a>
+        <a href="profile.html" class="nav-item active">Profile</a>
+        <a href="settings.html" class="nav-item">Settings</a>
+      </nav>
+      <div class="sidebar-foot"><button class="btn btn-ghost ripple" id="logoutBtn">Logout</button></div>
+    </aside>
+    <div class="main">
+      <header class="topbar glass">
+        <button class="icon-btn" id="menuBtn">≡</button>
+        <h2 class="page-title">Employee Profile</h2>
+        <div class="top-right">
+          <button class="btn btn-primary ripple" id="editBtn">Edit Profile</button>
+         <a href="profile.html" class="avatar-link">
+  <div class="avatar" id="topAvatar">JD</div>
+</a> 
+        </div>
+      </header>
+      <section class="content">
+        <div class="card glass profile-hero">
+          <div class="ph-photo">
+            <div class="avatar xxl" id="bigAvatar">JD</div>
+            <button class="btn btn-ghost ripple" id="changePhotoBtn">Change Photo</button>
+            <input type="file" id="photoInput" accept="image/*" hidden/>
+          </div>
+          <div class="ph-meta">
+            <h1 id="pName">Jane Doe</h1>
+            <p class="muted" id="pRole">Senior Engineer · Engineering</p>
+            <div class="chips">
+              <span class="chip" id="pId">EMP-00421</span>
+              <span class="chip" id="pJoin">Joined Jan 2022</span>
+            </div>
+          </div>
+        </div>
+        <form id="profileForm" class="profile-grid">
+          <div class="card glass profile-card">
+            <h3>Personal Information</h3>
+            <div class="form-grid">
+              <label>Full Name<input id="fName"/></label>
+              <label>Employee ID<input id="fId"/></label>
+              <label>Email<input id="fEmail" type="email"/></label>
+              <label>Phone<input id="fPhone"/></label>
+            </div>
+          </div>
+          <div class="card glass profile-card">
+            <h3>Employment</h3>
+            <div class="form-grid">
+              <label>Department<input id="fDept"/></label>
+              <label>Designation<input id="fDesig"/></label>
+              <label>Manager<input id="fManager"/></label>
+              <label>Joining Date<input id="fJoin" type="date"/></label>
+            </div>
+          </div>
+          <div class="profile-actions">
+    <button type="button"
+            class="btn btn-ghost ripple"
+            id="cancelBtn">
+        Cancel
+    </button>
+
+    <button type="submit"
+            class="btn btn-primary ripple"
+            id="saveBtn">
+        Save Changes
+    </button>
+</div>
+        </form>
+      </section>
+    </div>
+  </div>
+  <script src="js/profile.js"></script>
+</body>
+</html>
