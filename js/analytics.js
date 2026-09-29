@@ -82,9 +82,11 @@ $("#sumWFH").textContent = latest.counts.wfh;
 $("#sumLeave").textContent = latest.counts.leave;
 
 // KPI counters
-count($("#kScore"), score);
-count($("#kOff"), avgOff, 1);
-count($("#kWfh"), avgWfh, 1);
+// KPI counters
+count($("#kWfoPercent"), score);
+count($("#kWfhPercent"), 100 - score);
+count($("#kWfoDays"), avgOff, 1);
+count($("#kWfhDays"), avgWfh, 1);
 count($("#kLeave"), totalLeave);
   // ---------- Canvas charts (no libraries) ----------
   const ink = getCSS("--ink"), ink2 = getCSS("--ink-2"), stroke = "rgba(255,255,255,0.12)";
